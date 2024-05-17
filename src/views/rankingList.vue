@@ -258,11 +258,19 @@ import {
 import { useRequest } from "vue-request";
 
 const active = ref(0);
-const rankingListId = ref([]); // 榜单id
-const rankingPicURL = ref([]); // 榜单图片地址
+const rankingListId = ref<number[]>([]);
+const rankingPicURL = ref<string[]>([]);
 
-const { data: rankingListAll = [] } = useRequest(getrankingListAll, {});
-const { data: rankingListData } = useRequest(getrankingListData, {});
+// 使用泛型为 useRequest 返回的数据指定类型
+const { data: rankingListAll = [] as List[] } = useRequest(
+  getrankingListAll,
+  {}
+);
+const { data: rankingListData = [] as List[] } = useRequest(
+  getrankingListData,
+  {}
+);
+// 为 runSongListDetails 指定参数和返回值类型
 const { data: songListDetails, run: runSongListDetails } = useRequest(
   getSongListDetails,
   {
@@ -274,11 +282,12 @@ const { data: songListDetails, run: runSongListDetails } = useRequest(
 //   return item.id;
 // });
 
-function rankingPic(id: number) {
-  //   runSongListDetails({ id: id });
-  //   rankingPicURL.value.push(songListDetails.value);
-  //   console.log(rankingPicURL.value);
-  console.log(id);
+// 修复 rankingPic 函数的类型注解
+function rankingPic(id: number): string {
+  // 假设你有一些逻辑来获取图片 URL
+  // 这里只是一个示例，你需要根据实际情况实现获取 URL 的逻辑
+  const imageUrl = `/path/to/image/${id}.jpg`;
+  return imageUrl;
 }
 
 runSongListDetails({ id: 19723756 });
