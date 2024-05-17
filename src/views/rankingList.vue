@@ -76,7 +76,7 @@
             <div
               class="h-[36.53vw] w-[91.28vw] bg-[#fff] rounded-[3.84vw] mt-[4.7vw] pt-[2.4vw] pb-[3.59vw] pl-[5.04vw] pr-[4.1vw]"
               v-for="(item, index) in rankingListData?.slice(0, 4)"
-              :key="item"
+              :key="index"
             >
               <span class="flex justify-between">
                 <p class="text-[4.96vw] text-[#303546] font-[900]">
@@ -115,7 +115,7 @@
                   <div
                     class="flex justify-between text-[3.25vw] w-[55.84vw] h-[4.52vw]"
                     v-for="(data, key) in rankingListData[index].tracks"
-                    :key="data"
+                    :key="key"
                   >
                     <span class="text-[#303546] font-[900]">{{ key + 1 }}</span>
                     <p class="text-[#303546] font-[900] ellipsis">
@@ -142,7 +142,7 @@
                   index % 3 == 1 ? 'mx-[2.7vw]' : '',
                 ]"
                 v-for="(item, index) in rankingListAll?.slice(0, 11)"
-                :key="item"
+                :key="index"
               >
                 <img :src="item.coverImgUrl" class="rounded-[2.14vw]" />
                 <Icon
@@ -164,7 +164,7 @@
                   index % 3 == 1 ? 'mx-[2.7vw]' : '',
                 ]"
                 v-for="(item, index) in rankingListAll?.slice(11, 19)"
-                :key="item"
+                :key="index"
               >
                 <img :src="item.coverImgUrl" class="rounded-[2.14vw]" />
                 <Icon
@@ -186,7 +186,7 @@
                   index % 3 == 1 ? 'mx-[2.7vw]' : '',
                 ]"
                 v-for="(item, index) in rankingListAll?.slice(19, 25)"
-                :key="item"
+                :key="index"
               >
                 <img :src="item.coverImgUrl" class="rounded-[2.14vw]" />
                 <Icon
@@ -208,7 +208,7 @@
                   index % 3 == 1 ? 'mx-[2.7vw]' : '',
                 ]"
                 v-for="(item, index) in rankingListAll?.slice(25, 32)"
-                :key="item"
+                :key="index"
               >
                 <img :src="item.coverImgUrl" class="rounded-[2.14vw]" />
                 <Icon
@@ -230,7 +230,7 @@
                   index % 3 == 1 ? 'mx-[2.7vw]' : '',
                 ]"
                 v-for="(item, index) in rankingListAll?.slice(32, 38)"
-                :key="item"
+                :key="index"
               >
                 <img :src="item.coverImgUrl" class="rounded-[2.14vw]" />
                 <Icon
